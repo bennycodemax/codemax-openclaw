@@ -11,11 +11,6 @@ spec:
         branch: main
         repo_clone_url: https://github.com/bennycodemax/codemax-openclaw.git
       envs:
-        # Provide your Anthropic API Key
-        - key: ANTHROPIC_API_KEY
-          scope: RUN_TIME
-          type: SECRET
-
         # Required
         - key: OPENCLAW_GATEWAY_TOKEN
           scope: RUN_TIME
