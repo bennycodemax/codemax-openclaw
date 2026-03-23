@@ -33,7 +33,7 @@
             "anthropic": {
                 "baseUrl": "https://api.anthropic.com",
                 "apiKey": "${ANTHROPIC_API_KEY}",
-                "api": "anthropic",
+                "api": "anthropic-messages",
                 "models": [
                     {
                         "id": "claude-sonnet-4-6",
