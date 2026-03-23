@@ -1,15 +1,15 @@
-name: openclaw
-region: tor # Available: nyc, ams, sfo, sgp, lon, fra, blr, syd, tor
+name: codemax-openclaw
+region: sgp # Available: nyc, ams, sfo, sgp, lon, fra, blr, syd, tor
 
 workers:
-  - name: openclaw
+  - name: codemax-openclaw
     dockerfile_path: /Dockerfile
     source_dir: /
     instance_count: 1
     instance_size_slug: apps-s-1vcpu-2gb # Minimum 2GB required - 1GB causes heap overflow
     github:
       branch: main
-      repo: digitalocean-labs/openclaw-appplatform
+      repo: bennycodemax/codemax-openclaw
     envs:
       # ============================================================
       # REQUIRED
@@ -27,13 +27,13 @@ workers:
       # ============================================================
       - key: ENABLE_NGROK
         scope: RUN_TIME
-        value: "false"
+        value: "true"
       - key: TAILSCALE_ENABLE
         scope: RUN_TIME
         value: "false"
       - key: ENABLE_SPACES
         scope: RUN_TIME
-        value: "false"
+        value: "true"
       - key: ENABLE_UI
         scope: RUN_TIME
         value: "true"
@@ -70,26 +70,13 @@ workers:
         type: SECRET
       - key: RESTIC_SPACES_ENDPOINT
         scope: RUN_TIME
-        value: tor1.digitaloceanspaces.com
+        value: sgp1.digitaloceanspaces.com
       - key: RESTIC_SPACES_BUCKET
         scope: RUN_TIME
-        value: openclaw-backup
+        value: codemax-openclaw-space
       - key: RESTIC_PASSWORD
         scope: RUN_TIME
         type: SECRET
-
-      # ============================================================
-      # OPTIONAL
-      # ============================================================
-      - key: OPENCLAW_GATEWAY_TOKEN
+      - key: ANTHROPIC_API_KEY
         scope: RUN_TIME
         type: SECRET
-      - key: GRADIENT_API_KEY
-        scope: RUN_TIME
-        type: SECRET
-      - key: SSH_ENABLE
-        scope: RUN_TIME
-        value: "false"
-      - key: GITHUB_USERNAME
-        scope: RUN_TIME
-        value: ""
