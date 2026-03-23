@@ -32,7 +32,7 @@
         "providers": {
             "anthropic": {
                 "baseUrl": "https://api.anthropic.com",
-                "apiKey": "${ANTROPIC_API_KEY}",
+                "apiKey": "${ANTHROPIC_API_KEY}",
                 "api": "anthropic",
                 "models": [
                     {
