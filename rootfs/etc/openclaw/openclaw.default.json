@@ -3,7 +3,11 @@
         "mode": "local",
         "bind": "loopback",
         "controlUi": {
-            "allowInsecureAuth": true
+            "allowedOrigins": [
+                "https://carly-touristic-unkemptly.ngrok-free.dev",
+                "http://localhost:18789"
+            ],
+            "allowInsecureAuth": false
         }
     },
     "plugins": {
