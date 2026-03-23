@@ -49,10 +49,10 @@ spec:
           type: SECRET
 
         # Spaces config
-        - key: RESTIC_SPACES_ACCESS_KEY_ID
+        - key: AWS_ACCESS_KEY_ID
           scope: RUN_TIME
           type: SECRET
-        - key: RESTIC_SPACES_SECRET_ACCESS_KEY
+        - key: AWS_SECRET_ACCESS_KEY
           scope: RUN_TIME
           type: SECRET
         - key: RESTIC_SPACES_ENDPOINT
@@ -61,6 +61,9 @@ spec:
         - key: RESTIC_SPACES_BUCKET
           scope: RUN_TIME
           value: codemax-openclaw-space
+        - key: RESTIC_HOST
+          scope: RUN_TIME
+          value: openclaw
         - key: RESTIC_PASSWORD
           scope: RUN_TIME
           type: SECRET
@@ -68,4 +71,4 @@ spec:
         # OpenClaw Agents
         - key: OPENCLAW_AGENTS
           scope: RUN_TIME
-          value: '[{"id":"cto","workspace":"/workspace/cto","default":true,"description":"CTO & Engineering Director"},{"id":"project-manager","workspace":"/workspace/project-manager","description":"Project Manager & Scrum Master"},{"id":"backend-dev","workspace":"/workspace/backend-dev","description":"Senior Backend Engineer"},{"id":"frontend-dev","workspace":"/workspace/frontend-dev","description":"Senior Frontend Engineer"},{"id":"qa-tester","workspace":"/workspace/qa-tester","description":"QA Engineer & TestLead"},{"id":"devops","workspace":"/workspace/devops","description":"DevOps & Infrastructure Engineer"},{"id":"tech-support","workspace":"/workspace/tech-support","description":"Technical Support Specialist"}]'
+          value: [{"id":"cto","workspace":"/workspace/cto","default":true,"description":"CTO & Engineering Director"},{"id":"project-manager","workspace":"/workspace/project-manager","description":"Project Manager & Scrum Master"},{"id":"backend-dev","workspace":"/workspace/backend-dev","description":"Senior Backend Engineer"},{"id":"frontend-dev","workspace":"/workspace/frontend-dev","description":"Senior Frontend Engineer"},{"id":"qa-tester","workspace":"/workspace/qa-tester","description":"QA Engineer & TestLead"},{"id":"devops","workspace":"/workspace/devops","description":"DevOps & Infrastructure Engineer"},{"id":"tech-support","workspace":"/workspace/tech-support","description":"Technical Support Specialist"}]
