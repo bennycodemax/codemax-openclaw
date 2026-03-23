@@ -20,6 +20,9 @@ workers:
       - key: STABLE_HOSTNAME
         scope: RUN_TIME
         value: openclaw
+      - key: ANTHROPIC_API_KEY
+        scope: RUN_TIME
+        type: SECRET
 
       # ============================================================
       # FEATURE FLAGS
