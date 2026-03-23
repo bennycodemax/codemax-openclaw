@@ -18,6 +18,9 @@ spec:
         - key: STABLE_HOSTNAME
           scope: RUN_TIME
           value: codemax-openclaw
+        - key: ANTHROPIC_API_KEY
+          scope: RUN_TIME
+          type: SECRET
 
         # Feature flags
         - key: ENABLE_NGROK
