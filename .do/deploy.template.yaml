@@ -1,18 +1,18 @@
 spec:
-  name: openclaw
-  region: tor
+  name: codemax-openclaw
+  region: sgp
   workers:
-    - name: openclaw
+    - name: codemax-openclaw
       dockerfile_path: /Dockerfile
       source_dir: /
       instance_count: 1
       instance_size_slug: apps-s-1vcpu-2gb # Minimum 2GB required - 1GB causes heap overflow
       git:
         branch: main
-        repo_clone_url: https://github.com/digitalocean-labs/openclaw-appplatform.git
+        repo_clone_url: https://github.com/bennycodemax/codemax-openclaw.git
       envs:
         # Provide your Gradient inference key
-        - key: GRADIENT_API_KEY
+        - key: ANTHROPIC_API_KEY
           scope: RUN_TIME
           type: SECRET
 
@@ -22,21 +22,21 @@ spec:
           type: SECRET
         - key: STABLE_HOSTNAME
           scope: RUN_TIME
-          value: openclaw
+          value: codemax-openclaw
 
         # Feature flags
         - key: ENABLE_NGROK
           scope: RUN_TIME
-          value: "false"
+          value: "true"
         - key: TAILSCALE_ENABLE
           scope: RUN_TIME
           value: "false"
         - key: ENABLE_SPACES
           scope: RUN_TIME
-          value: "false"
+          value: "true"
         - key: ENABLE_UI
           scope: RUN_TIME
-          value: "false"
+          value: "true"
 
         # ngrok config
         - key: NGROK_AUTHTOKEN
@@ -64,14 +64,3 @@ spec:
         - key: RESTIC_PASSWORD
           scope: RUN_TIME
           type: SECRET
-
-        # Optional
-        - key: OPENCLAW_GATEWAY_TOKEN
-          scope: RUN_TIME
-          type: SECRET
-        - key: SSH_ENABLE
-          scope: RUN_TIME
-          value: "false"
-        - key: GITHUB_USERNAME
-          scope: RUN_TIME
-          value: ""
