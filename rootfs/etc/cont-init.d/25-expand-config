@@ -1,0 +1,3 @@
+#!/command/with-contenv bash
+sed -i "s|\${ANTHROPIC_API_KEY}|$ANTHROPIC_API_KEY|g" /data/.openclaw/openclaw.json
+echo "Config env vars expanded"
