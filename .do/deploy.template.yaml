@@ -11,7 +11,7 @@ spec:
         branch: main
         repo_clone_url: https://github.com/bennycodemax/codemax-openclaw.git
       envs:
-        # Provide your Gradient inference key
+        # Provide your Anthropic API Key
         - key: ANTHROPIC_API_KEY
           scope: RUN_TIME
           type: SECRET
@@ -64,3 +64,8 @@ spec:
         - key: RESTIC_PASSWORD
           scope: RUN_TIME
           type: SECRET
+
+        # OpenClaw Agents
+        - key: OPENCLAW_AGENTS
+          scope: RUN_TIME
+          value: [{"id":"cto","workspace":"/workspace/cto","default":true,"description":"CTO & Engineering Director"},{"id":"project-manager","workspace":"/workspace/project-manager","description":"Project Manager & Scrum Master"},{"id":"backend-dev","workspace":"/workspace/backend-dev","description":"Senior Backend Engineer"},{"id":"frontend-dev","workspace":"/workspace/frontend-dev","description":"Senior Frontend Engineer"},{"id":"qa-tester","workspace":"/workspace/qa-tester","description":"QA Engineer & TestLead"},{"id":"devops","workspace":"/workspace/devops","description":"DevOps & Infrastructure Engineer"},{"id":"tech-support","workspace":"/workspace/tech-support","description":"Technical Support Specialist"}]
